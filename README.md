@@ -78,7 +78,7 @@ I also set up alerts to ping me on **Telegram** if the server gets overloaded.
 
 ---
 
-### Architecture
+## Architecture
 
 This system uses a standard Prometheus pull-based architecture, securely exposed via Nginx.
 
@@ -103,42 +103,51 @@ graph TD
 
 To get this monitoring stack running, you'll need these main apps installed. I recommend using **Docker** for all of them to keep things simple.
 
-### 1. Install the Core Apps
-Ensure you have these services up and running:
-- **[Pi-hole](https://pi-hole.net/)**: Your network's ad-blocker and DNS server (point WireGuard to it).
-- **[WireGuard](https://www.wireguard.com/)**: VPN to point traffic to.
+### 1. Core Services Installation
+
+- **[Pi-hole](https://pi-hole.net/)**: Set this up first as your primary DNS. Point WireGuard to it.
+- **[WireGuard](https://www.wireguard.com/)**:  VPN to point traffic to.
 - **[Prometheus](https://prometheus.io/)**: The database that collects and stores metrics.
 - **[Grafana](https://grafana.com/oss/grafana/)**: The dashboard tool used to visualize all the data.
 
-### 2. Set Up the Exporters
+### 2. Pointing Traffic to the Ad-block
+To actually use your new setup, you need to tell your devices where to look:
+- **For your Home Network**: Change your Router's DNS settings to point to your Server's IP address.
+- **For WireGuard**: In your WireGuard client config `.conf`, set `DNS = <Your_Pihole_IP>`. This ensures the device uses Pi-hole even when you are on public Wi-Fi or Mobile data.
+
+### 3. Setting Up Exporters
 Exporters take data from your apps and hand it over to Prometheus.
+
+
 - **Node Exporter**: Install this on your server port `9100` to track system health like CPU, RAM and Disk usage.
-- **Pi-hole Exporter**: I use the [bazmonk/pihole6_exporter](https://github.com/bazmonk/pihole6_exporter) on port `9617`. You'll need to provide your Pi-hole API token so it can read your DNS stats.
+- **Pi-hole Exporter**: I use the [ekofr/pihole-exporter](https://github.com/ekofr/pihole-exporter). You'll need to provide your Pi-hole API token so it can read your DNS stats. (found in Settings > API) and usually runs on port `9617`.
 
-### 3. Connect Prometheus to Exporters
-Update your `prometheus.yml` file to tell it where to find the data. Add these lines under `scrape_configs`:
+### 4. Configure Prometheus
+Update your `prometheus.yml` to start scraping data from your exporters:
 ```yaml
-- job_name: 'node'
-  static_configs:
-    - targets: ['localhost:9100']
+scrape_configs:
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
 
-- job_name: 'pihole'
-  static_configs:
-    - targets: ['localhost:9617']
+  - job_name: 'pihole'
+    static_configs:
+      - targets: ['localhost:9617']
 ```
 
-### 4. Import the Dashboards
-1. Open Grafana, go to **Dashboards > Import**.
-2. **For Pi-hole**: Upload the `pihole-stats.json` file included in this repository.
-3. **For System Health**: I recommend using the [Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) dashboard.
-### 5. Secure with Nginx 
-Finally, use **Nginx** as a reverse proxy to handle SSL (HTTPS). This keeps your connection secure when you access it outside of your network.
+### 5. Importing Dashboards to Gafana
+1. Open Grafana and go to **Dashboards > Import**.
+2. **For Pi-hole**: Upload the `pihole-stats.json` file from this repository.
+3. **For System Health**: Use Grafana ID `1860` or the [Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) dashboard.
+4. Then select prometheus as datasource.
+   
+
+### 6. Secure with Nginx
+Use **Nginx** as a reverse proxy to add SSL (HTTPS). This keeps your connection to the server secure when you access it outside of your network.
 
 
 
 ---
-
-
 
 ## 📝 License
 Distributed under the MIT License. See `LICENSE` for more information.
