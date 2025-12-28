@@ -138,7 +138,7 @@ scrape_configs:
 ### 5. Importing Dashboards to Gafana
 1. Open Grafana and go to **Dashboards > Import**.
 2. **For Pi-hole**: Upload the `pihole-stats.json` file from this repository.
-3. **For System Health**: Use Grafana ID `1860` or the [Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) dashboard.
+3. **For System Health**: I recommend using the [Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) dashboard.
 4. Then select prometheus as datasource.
    
 
