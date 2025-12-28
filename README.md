@@ -1,10 +1,10 @@
 # <img src="https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png" width="36" height="36"> Pi-hole DNS and Linux Monitoring
 
 <p align="center">
-  <img src="screenshots/pihole.png" width="50%" />
-  <img src="screenshots/pihole2.png" width="50%" />
-  <img src="screenshots/pihole1.png" width="50%" />
-  <img src="screenshots/system.png" width="50%" />
+  <img src="screenshots/pihole.png" width="49%" />
+  <img src="screenshots/pihole2.png" width="49%" />
+  <img src="screenshots/pihole1.png" width="49%" />
+  <img src="screenshots/system.png" width="49%" />
 </p>
 
 > **Pi-hole Live Dashboard:** [https://serverdashboard.qzz.io](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)  
