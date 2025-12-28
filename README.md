@@ -1,4 +1,4 @@
-# <img src="https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png" width="36" height="36"> Pi-hole DNS and Linux Monitoring
+# <img src="https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png" width="36" height="36"> Pi-hole Ad-block  Monitoring
 
 <p align="center">
   <img src="screenshots/pihole.png" width="49%" />
@@ -12,7 +12,7 @@
 
 ### Network Security and Infrastructure Reliability
 
-This repo shows how I monitor my demo home lab's Pi-hole ad-block and DNS on a Linux server. I'm using Prometheus to collect metrics and Grafana to visualize DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
+This repo shows how I monitor my home lab Pi-hole ad-block and DNS on a Linux server. I'm using Prometheus to collect metrics and Grafana to visualize DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
 
 ---
 
