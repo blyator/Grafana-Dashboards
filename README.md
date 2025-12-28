@@ -101,7 +101,7 @@ graph TD
 
 ##  Deployment and Setup
 
-To get this monitoring stack running, you'll need three main apps installed. I recommend using **Docker** for all of them to keep things simple.
+To get this monitoring stack running, you'll need these main apps installed. I recommend using **Docker** for all of them to keep things simple.
 
 ### 1. Install the Core Apps
 Ensure you have these services up and running:
