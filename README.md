@@ -10,20 +10,22 @@
 > **Pi-hole Live Dashboard:** [https://serverdashboard.qzz.io](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)  
 > **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)
 
-### Network Security & Infrastructure Reliability
+### Network Security and Infrastructure Reliability
 
-This repo shows how I monitor my demo home lab's Pi-hole ad-block and DNS on a Linux server. I'm using Prometheus and Grafana to track DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
+This repo shows how I monitor my demo home lab's Pi-hole ad-block and DNS on a Linux server. I'm using Prometheus to collect metrics and Grafana to visualize DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
 
 ---
 
 ## Project Overview
 
-I built this setup to improve my overall internet experience, which had become increasingly unusable without an effective ad-blocker.This provides network-wide ad-blocking and tracker protection via Pi-hole DNS. By acting as the primary DNS sinkhole for my entire network, it strips away advertisements at the DNS level before they ever reach any of my devices, significantly improving my internet experience.
+I built this system to improve my overall internet experience, which had become increasingly unusable without an effective ad-blocker. This provides network-wide ad-blocking and tracker protection via Pi-hole DNS. By acting as the DNS sinkhole for my entire network, it strips away advertisements at the DNS level before they ever reach any of my devices, significantly improving my internet experience.
 
 I also integrated system monitoring alongside Pi-hole statistics. Now I can easily tell how effectively Pi-hole is filtering traffic while also monitoring the health and stability of the server at a glance all from the dashboard. It is so easy to manage the system and quickly spot any issues without having to query anything.
+
 ## The Stack
 - **DNS Sinkhole:** Pi-hole
 - **Reverse Proxy:** Nginx (SSL/TLS Termination)
+- **VPN:** WireGuard 
 - **Metrics Collection:** Prometheus
 - **Exporters:**
   - `pihole-exporter` - DNS stats
@@ -102,8 +104,9 @@ graph TD
 To get this monitoring stack running, you'll need three main apps installed. I recommend using **Docker** for all of them to keep things simple.
 
 ### 1. Install the Core Apps
-Ensure you have these three services up and running:
-- **[Pi-hole](https://pi-hole.net/)**: Your network's ad-blocker and DNS server.
+Ensure you have these services up and running:
+- **[Pi-hole](https://pi-hole.net/)**: Your network's ad-blocker and DNS server (point WireGuard to it).
+- **[WireGuard](https://www.wireguard.com/)**: VPN to point traffic to.
 - **[Prometheus](https://prometheus.io/)**: The database that collects and stores metrics.
 - **[Grafana](https://grafana.com/oss/grafana/)**: The dashboard tool used to visualize all the data.
 
