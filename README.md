@@ -1,10 +1,10 @@
 # <img src="https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png" width="36" height="36"> Pi-hole DNS and Linux Monitoring
 
 <p align="center">
-  <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="45%" />
-  <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="45%" />
-  <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="45%" />
-  <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="45%" />
+  <img src="screenshots/pihole.png" width="45%" />
+  <img src="screenshots/pihole2.png" width="45%" />
+  <img src="screenshots/pihole1.png" width="45%" />
+  <img src="screenshots/system.png" width="45%" />
 </p>
 
 > **Pi-hole Live Dashboard:** [https://serverdashboard.qzz.io](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)  
@@ -44,7 +44,7 @@ Real-time monitoring of DNS traffic and filtering efficiency. Key metrics tracke
 
 <blockquote>
   <a href="https://serverdashboard.qzz.io/d/edknpuskjzw1sc/">
-    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="30%" alt="Pi-hole DNS Dashboard">
+    <img src="screenshots/pihole.png" width="30%" alt="Pi-hole DNS Dashboard">
   </a>
 </blockquote>
 
@@ -56,7 +56,7 @@ Keeps track of the server's resources to prevent issues:
 
 <blockquote>
   <a href="https://serverdashboard.qzz.io/d/rYdddlPWk/">
-    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="30%" alt="System Health Dashboard">
+    <img src="screenshots/system1.png" width="30%" alt="System Health Dashboard">
   </a>
 </blockquote>
 
