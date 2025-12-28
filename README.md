@@ -1,10 +1,10 @@
 # <img src="https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png" width="36" height="36"> Pi-hole DNS and Linux Monitoring
 
 <p align="center">
-  <img src="screenshots/pihole.png" width="45%" />
-  <img src="screenshots/pihole2.png" width="45%" />
-  <img src="screenshots/pihole1.png" width="45%" />
-  <img src="screenshots/system.png" width="45%" />
+  <img src="screenshots/pihole.png" width="50%" />
+  <img src="screenshots/pihole2.png" width="50%" />
+  <img src="screenshots/pihole1.png" width="50%" />
+  <img src="screenshots/system.png" width="50%" />
 </p>
 
 > **Pi-hole Live Dashboard:** [https://serverdashboard.qzz.io](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)  
@@ -56,7 +56,7 @@ Keeps track of the server's resources to prevent issues:
 
 <blockquote>
   <a href="https://serverdashboard.qzz.io/d/rYdddlPWk/">
-    <img src="screenshots/system1.png" width="30%" alt="System Health Dashboard">
+    <img src="screenshots/system.png" width="30%" alt="System Health Dashboard">
   </a>
 </blockquote>
 
@@ -97,7 +97,7 @@ graph TD
 ---
 
 
-##  Deployment & Setup
+##  Deployment and Setup
 
 To get this monitoring stack running, you'll need three main apps installed. I recommend using **Docker** for all of them to keep things simple.
 
