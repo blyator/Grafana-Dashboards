@@ -38,7 +38,7 @@ I also integrated system monitoring alongside Pi-hole statistics. Now I can easi
 
 ##  Dashboard Insights
 
-### 1. [Pi-hole DNS Performance](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)
+### 1. [Pi-hole DNS Performance](https://serverdashboard.qzz.io/d/pihole-metrics/pihole-dns-adblock?kiosk&refresh=30s)
 Real-time monitoring of DNS traffic and filtering efficiency. Key metrics tracked include:
 - **Network Summary:** Total Queries, Active Clients and Domains on Blocklist.
 - **Filtering Impact:** Tracking of Blocked Queries and total Ads Blocked.
@@ -51,7 +51,7 @@ Real-time monitoring of DNS traffic and filtering efficiency. Key metrics tracke
   </a>
 </blockquote>
 
-### 2. [System Health](https://serverdashboard.qzz.io/d/rYdddlPWk/)
+### 2. [System Health](https://serverdashboard.qzz.io/d/system-stats/full-system-stats?kiosk=true&refresh=30s)
 Keeps track of the server's resources to prevent issues:
 - **CPU Load:** Breakdown of System vs. User load.
 - **Memory Usage:** RAM usage and swap tracking.
