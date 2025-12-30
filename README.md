@@ -7,8 +7,9 @@
   <img src="screenshots/system.png" width="49%" />
 </p>
 
-> **Pi-hole Live Dashboard:** [https://serverdashboard.qzz.io](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)  
-> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/edknpuskjzw1sc/)
+> **Pi-hole Live Dashboard:** [https://serverdashboard.qzz.io/pihole](https://serverdashboard.qzz.io/d/pihole-metrics/pihole-dns-adblock?kiosk&refresh=30s)  
+> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/system-stats/full-system-stats?kiosk=true&refresh=30s
+)
 
 ### Network Security and Infrastructure Reliability
 
