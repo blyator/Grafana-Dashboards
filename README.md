@@ -1,4 +1,4 @@
-# <img src="https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png" width="36" height="36"> Pi-hole Ad-block  Monitoring
+# <img src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/adguard-home.png" width="36" height="36"> AdGuard Home Monitoring
 
 <p align="center">
   <img src="screenshots/pihole.png" width="49%" />
@@ -7,29 +7,28 @@
   <img src="screenshots/system.png" width="49%" />
 </p>
 
-> **Pi-hole Live Dashboard:** [https://serverdashboard.qzz.io/pihole](https://serverdashboard.qzz.io/d/pihole-metrics/pihole-dns-adblock?kiosk&refresh=30s)  
-> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/system-stats/full-system-stats?kiosk=true&refresh=30s
-)
+> **AdGuard Home Live Dashboard:** [https://serverdashboard.qzz.io/adguard](https://serverdashboard.qzz.io/)  
+> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/rYdddlP/node-exporter-full?kiosk=true&orgId=1&from=now-24h&to=now&refresh=1m&timezone=browser&var-ds_prometheus=df78wgzh1w0lca&var-job=node&var-nodename=Homelab&var-node=Homelab)
 
 ### Network Security and Infrastructure Reliability
 
-This repo shows how I monitor my home lab Pi-hole ad-block and DNS on a Linux server. I'm using Prometheus to collect metrics and Grafana to visualize DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
+This repo shows how I monitor my AdGuard Home ad-block and DNS on a Linux server. I'm using Prometheus to collect metrics and Grafana to visualize DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
 
 ---
 
 ## Project Overview
 
-I built this system to improve my overall internet experience, which had become increasingly unusable without an effective ad-blocker. This provides network-wide ad-blocking and tracker protection via Pi-hole DNS. By acting as the DNS sinkhole for my entire network, it strips away advertisements at the DNS level before they ever reach any of my devices, significantly improving my internet experience.
+I built this system to improve my overall internet experience, which had become increasingly unusable without an effective ad-blocker. This provides network-wide ad-blocking and tracker protection via AdGuard Home DNS. By acting as the DNS sinkhole for my entire network, it strips away advertisements at the DNS level before they ever reach any of my devices, significantly improving my internet experience.
 
-I also integrated system monitoring alongside Pi-hole statistics. Now I can easily tell how effectively Pi-hole is filtering traffic while also monitoring the health and stability of the server at a glance all from the dashboard. It is so easy to manage the system and quickly spot any issues without having to query anything.
+I also integrated system monitoring alongside AdGuard Home statistics. Now I can easily tell how effectively AdGuard Home is filtering traffic while also monitoring the health and stability of the server at a glance all from the dashboard. It is so easy to manage the system and quickly spot any issues without having to query anything.
 
 ## The Stack
-- **DNS Sinkhole:** Pi-hole
+- **DNS Sinkhole:** AdGuard Home
 - **Reverse Proxy:** Nginx (SSL/TLS Termination)
-- **VPN:** WireGuard 
+- **VPN:** Tailscale
 - **Metrics Collection:** Prometheus
 - **Exporters:**
-  - `pihole-exporter` - DNS stats
+  - `adguard-exporter` - DNS stats
   - `node_exporter` - System stats
 - **Visualization:** Grafana
 - **Alerting:** Alertmanager - Via Telegram
@@ -38,7 +37,7 @@ I also integrated system monitoring alongside Pi-hole statistics. Now I can easi
 
 ##  Dashboard Insights
 
-### 1. [Pi-hole DNS Performance](https://serverdashboard.qzz.io/d/pihole-metrics/pihole-dns-adblock?kiosk&refresh=30s)
+### 1. [AdGuard Home DNS ](https://serverdashboard.qzz.io/)
 Real-time monitoring of DNS traffic and filtering efficiency. Key metrics tracked include:
 - **Network Summary:** Total Queries, Active Clients and Domains on Blocklist.
 - **Filtering Impact:** Tracking of Blocked Queries and total Ads Blocked.
@@ -47,11 +46,11 @@ Real-time monitoring of DNS traffic and filtering efficiency. Key metrics tracke
 
 <blockquote>
   <a href="https://serverdashboard.qzz.io/d/edknpuskjzw1sc/">
-    <img src="screenshots/pihole.png" width="30%" alt="Pi-hole DNS Dashboard">
+    <img src="screenshots/pihole.png" width="30%" alt="AdGuard Home DNS Dashboard">
   </a>
 </blockquote>
 
-### 2. [System Health](https://serverdashboard.qzz.io/d/system-stats/full-system-stats?kiosk=true&refresh=30s)
+### 2. [System Health](https://serverdashboard.qzz.io/d/rYdddlP/node-exporter-full?kiosk=true&orgId=1&from=now-24h&to=now&refresh=1m&timezone=browser&var-ds_prometheus=df78wgzh1w0lca&var-job=node&var-nodename=Homelab&var-node=Homelab)
 Keeps track of the server's resources to prevent issues:
 - **CPU Load:** Breakdown of System vs. User load.
 - **Memory Usage:** RAM usage and swap tracking.
@@ -86,14 +85,14 @@ This system uses a standard Prometheus pull-based architecture, securely exposed
 ```mermaid
 graph TD
     User -- HTTPS --> Nginx -- Proxy --> Grafana
-    Pi-hole -- Stats --> Prometheus -- Query --> Grafana
+    AdGuard -- Stats --> Prometheus -- Query --> Grafana
     Prometheus -- Alerts --> Telegram
 ```
 
-- **Pi-hole**: Core DNS ad-blocker.
+- **AdGuard Home**: Core DNS ad-blocker.
 - **Prometheus**: Time-series database that scrapes metrics from the server.
 - **Grafana**: Visualization layer for building real-time dashboards.
-- **Exporters**: `node_exporter` (System stats) and `pihole_exporter` (DNS stats).
+- **Exporters**: `node_exporter` (System stats) and `adguard_exporter` (DNS stats).
 - **Security**: **Nginx** handles SSL/TLS termination for secure remote access.
 - **Alerting**: Alertmanager integration for **Telegram** notifications.
 
@@ -106,22 +105,22 @@ To get this monitoring stack running, you'll need these main apps installed. I r
 
 ### 1. Core Services Installation
 
-- **[Pi-hole](https://pi-hole.net/)**: Set this up first as your primary DNS. Point WireGuard to it.
-- **[WireGuard](https://www.wireguard.com/)**:  VPN to point traffic to.
+- **[AdGuard Home](https://adguard.com/en/adguard-home/overview.html)**: Set this up first as your primary DNS.
+- **[Tailscale](https://tailscale.com/)**: Used to proxy to the server and securely access services (like Grafana and AdGuard UI) from any network.
 - **[Prometheus](https://prometheus.io/)**: The database that collects and stores metrics.
 - **[Grafana](https://grafana.com/oss/grafana/)**: The dashboard tool used to visualize all the data.
 
 ### 2. Pointing Traffic to the Ad-block
 To actually use your new setup, you need to tell your devices where to look:
 - **For your Home Network**: Change your Router's DNS settings to point to your Server's IP address.
-- **For WireGuard**: In your WireGuard client config `.conf`, set `DNS = <Your_Pihole_IP>`. This ensures the device uses Pi-hole even when you are on public Wi-Fi or Mobile data.
+- **For Remote Access**: Use **Tailscale** to securely connect to your server. This allows you to securely access the dashboards and management UIs from outside home network.
 
 ### 3. Setting Up Exporters
 Exporters take data from your apps and hand it over to Prometheus.
 
 
 - **Node Exporter**: Install this on your server port `9100` to track system health like CPU, RAM and Disk usage.
-- **Pi-hole Exporter**: I use the [ekofr/pihole-exporter](https://github.com/ekofr/pihole-exporter). You'll need to provide your Pi-hole API token so it can read your DNS stats. (found in Settings > API) and usually runs on port `9617`.
+- **AdGuard Exporter**: I use this [adguard-exporter](https://github.com/henrywhitaker3/adguard-exporter). You'll need to provide your AdGuard Home credentials so it can read your DNS stats, usually runs on port `9617`.
 
 ### 4. Configure Prometheus
 Update your `prometheus.yml` to start scraping data from your exporters:
@@ -131,14 +130,14 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9100']
 
-  - job_name: 'pihole'
+  - job_name: 'adguard'
     static_configs:
       - targets: ['localhost:9617']
 ```
 
 ### 5. Importing Dashboards to Gafana
 1. Open Grafana and go to **Dashboards > Import**.
-2. **For Pi-hole**: Upload the `pihole-stats.json` file from this repository.
+2. **For AdGuard Home**: Upload the `AdGuard-DNS-stats.json` file from this repository.
 3. **For System Health**: I recommend using the [Node Exporter Full](https://grafana.com/grafana/dashboards/1860-node-exporter-full/) dashboard.
 4. Then select prometheus as datasource.
    
