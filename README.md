@@ -12,7 +12,7 @@
 
 ### Network Security and Infrastructure Reliability
 
-This repo shows how I monitor my AdGuard Home ad-block and DNS on a Linux server. I'm using Prometheus to collect metrics and Grafana to visualize DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
+This repo shows how I monitor my AdGuard Home ad-block and DNS on my HomeLab Linux server. I'm using Prometheus to collect metrics and Grafana to visualize DNS queries and system stats (CPU, RAM, Disk) in real-time, with Nginx handling SSL to keep the dashboard secure.
 
 ---
 
