@@ -20,7 +20,7 @@ This repo shows how I monitor my AdGuard Home ad-block and DNS on my HomeLab Lin
 
 I built this system to improve my overall internet experience, which had become increasingly unusable without an effective ad-blocker. This provides network-wide ad-blocking and tracker protection via AdGuard Home DNS. By acting as the DNS sinkhole for my entire network, it strips away advertisements at the DNS level before they ever reach any of my devices, significantly improving my internet experience.
 
-I also integrated system monitoring alongside AdGuard Home statistics. Now I can easily tell how effectively AdGuard Home is filtering traffic while also monitoring the health and stability of the server at a glance all from the dashboard. It is so easy to manage the system and quickly spot any issues without having to query anything.
+I also integrated system monitoring alongside AdGuard Home statistics. Now I can easily tell how effectively AdGuard Home is filtering traffic while also monitoring the health and stability of the server from the dashboard. It is so easy to manage the system and quickly spot any issues without having to query anything.
 
 ## The Stack
 - **DNS Sinkhole:** AdGuard Home
