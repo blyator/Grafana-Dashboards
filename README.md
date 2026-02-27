@@ -7,11 +7,11 @@
   <img src="screenshots/system.png" width="49%" />
 </p>
 
-> **AdGuard Home Dashboard:** [https://serverdashboard.qzz.io/adguard](https://serverdashboard.qzz.io/adguard)
+> **AdGuard Home Dashboard:** [https://serverdashboard.qzz.io/adguard](https://serverdashboard.qzz.io/)
 
-> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/metrics)
+> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/system?kiosk)
 
-> **Docker Containers Dashboard:** [https://serverdashboard.qzz.io/docker](https://serverdashboard.qzz.io/docker)
+> **Docker Containers Dashboard:** [https://serverdashboard.qzz.io/docker](https://serverdashboard.qzz.io/d/homelab-docker?kiosk)
 
 ### Network Security, Container Orchestration and Infrastructure Reliability
 
