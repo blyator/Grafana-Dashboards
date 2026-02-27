@@ -8,8 +8,8 @@
 </p>
 
 > **AdGuard Home  Dashboard:** [https://serverdashboard.qzz.io/adguard](https://serverdashboard.qzz.io/)  
-> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/rYdddlP/node-exporter-full)
-> **Docker Containers Dashboard:** [https://serverdashboard.qzz.io/docker](https://serverdashboard.qzz.io/d/homelab-docker)
+> **System Health Dashboard:** [https://serverdashboard.qzz.io/metrics](https://serverdashboard.qzz.io/d/system?kiosk)
+> **Docker Containers Dashboard:** [https://serverdashboard.qzz.io/docker](https://serverdashboard.qzz.io/d/homelab-docker?kiosk)
 
 ### Network Security, Container Orchestration and Infrastructure Reliability
 
@@ -52,7 +52,7 @@ Real-time monitoring of DNS traffic and filtering efficiency.
   </a>
 </blockquote>
 
-### 2. [Docker Containers](https://serverdashboard.qzz.io/d/homelab-docker)
+### 2. [Docker Containers](https://serverdashboard.qzz.io/d/homelab-docker?orgId=1&kiosk)
 Detailed monitoring of containerized services:
 - **Service Health:** Running and Uptime tracking.
 - **Resource Usage:** CPU and Memory share per container.
@@ -64,7 +64,7 @@ Detailed monitoring of containerized services:
   </a>
 </blockquote>
 
-### 3. [System Health](https://serverdashboard.qzz.io/d/rYdddlP/node-exporter-full)
+### 3. [System Health](https://serverdashboard.qzz.io/d/system?kiosk)
 Keeps track of the server's physical resources:
 - **CPU Load:** Breakdown of System load.
 - **Memory Usage:** RAM usage and swap tracking.
